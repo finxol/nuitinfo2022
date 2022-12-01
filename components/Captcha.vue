@@ -20,13 +20,18 @@ const captcha = [
     { name: "Pornhub", birthday: 2007}
 ]
 
+const randomNumber = () => {
+    return Math.ceil(Math.random() * 852) % captcha.length
+}
+const selected = captcha[randomNumber()]
+
 </script>
 
 <template>
     <div>
         <form>
-            Captcha de qualité 
-            Entrez la date de naissance de ce président
+            Captcha de qualité <br>
+            Entrez la date de naissance de ce président: {{ selected.name }} <br>
             <input type="number" name="birthday" value=2007 >
             <input type="submit" class="envoyer" value="Valider">
         </form>

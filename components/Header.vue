@@ -27,7 +27,9 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 3rem;
+    margin: 0 2rem;
+    padding: 0 1rem 1rem;
+    border-bottom: 1px solid #f0f0f0;
 
     h1 {
         font-size: 1.5rem;
