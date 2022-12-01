@@ -15,6 +15,9 @@ const {data: questions} = await useAsyncData('questions', async () => {
             </li>
         </ul>
     </div>
+
+    <LazyCaptcha/>
+
 </template>
 
 <style scoped lang="scss">
