@@ -29,7 +29,6 @@ const captcha = [
             Entrez la date de naissance de ce président
             <input type="number" name="birthday" value=2007 >
             <input type="submit" class="envoyer" value="Valider">
-
         </form>
     </div>
 </template>
