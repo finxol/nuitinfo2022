@@ -2,7 +2,7 @@
 const emit = defineEmits(['elapsed'])
 
 let date = new Date();
-date.setMinutes(date.getMinutes() + 1);
+date.setMinutes(date.getMinutes() + 2);
 
 // Update the countdown every 1 second
 let x = setInterval(function() {
