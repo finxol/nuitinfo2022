@@ -34,7 +34,7 @@ let failed = reactive({show: false});
 const submit = () => {
     console.log('submit')
     if (birthday === selected.text.birthday) {
-        console.log("captcha valide ")
+        console.log("captcha valide")
         emit('validated')
     } else {
         console.log("captcha raté")
