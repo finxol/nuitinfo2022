@@ -1,16 +1,17 @@
 <script setup>
-const codes = [{
+let codes = reactive([{
         keys: "capote",
         show: false,
         function: () => {
-            codes[0].show = true
+            console.log("capote")
+            codes[0].show = !codes[0].show
         },
     }, {
         keys: "abstinence",
         function: () => {
             document.body.querySelector("#app").style.backgroundImage = "url('')"
         },
-}]
+}])
 
 let pressed = ""
 
@@ -21,6 +22,7 @@ onMounted(() => {
         for (const code of codes) {
             if (pressed === code.keys) {
                 code.function()
+                pressed = ""
             }
         }
     })
@@ -36,10 +38,13 @@ onMounted(() => {
         </main>
 
         <img
-            v-if="codes[0].show"
-            id="easteregg1"
-            src="https://media.giphy.com/media/3o7TKsQ8U1iZ3Nl7XO/giphy.gif"
-        >
+            @click="codes[0].function"
+            v-show="codes[0].show"
+            id="capote"
+            src="https://media3.giphy.com/media/dJeCjBmoJWVcHqXBCb/giphy.gif"
+            alt="easteregg1"
+         >
+        <Footer/>
     </div>
 </template>
 
@@ -52,16 +57,69 @@ body {
     line-height: 1.5;
     color: #f0f0f0;
     background-color: #1e1e1e;
-}
-div#app {
-    min-height: 100vh;
-    background-color: #1e1e1e;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
 
-    main {
+    div#app {
         min-height: 100vh;
+        background-color: #1e1e1e;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+
+        img#capote {
+            position: absolute;
+            top: calc(50vh - (clamp(1px, 50vh, 50rem) /2));
+            left: calc(50% - (clamp(100px, 50%, 50rem) /2));
+            width: clamp(100px, 30%, 50rem);
+            z-index: 100;
+            border-radius: 50%;
+            animation: 1s appear;
+            animation-iteration-count: 1;
+
+            @keyframes appear {
+                0% {
+                    opacity: 0;
+                    transform: rotate(0deg);
+                }
+                10% {
+                    transform: rotate(180deg);
+                }
+                20% {
+                    transform: rotate(0deg);
+                }
+                30% {
+                    transform: rotate(180deg);
+                }
+                40% {
+                    transform: rotate(0deg);
+                }
+                50% {
+                    transform: rotate(180deg);
+                }
+                60% {
+                    transform: rotate(0deg);
+                }
+                70% {
+                    transform: rotate(180deg);
+                }
+                80% {
+                    transform: rotate(0deg);
+                }
+                90% {
+                    transform: rotate(180deg);
+                }
+                100% {
+                    opacity: 1;
+                    transform: rotate(0deg);
+                }
+            }
+        }
     }
+}
+
+
+.center-children {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 </style>

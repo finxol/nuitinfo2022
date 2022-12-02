@@ -8,7 +8,7 @@ const pages = [
 
 <template>
     <header>
-        <h1>En-tête (à tête)</h1>
+        <h1>Le pied</h1>
 
         <nav>
             <NuxtLink
@@ -18,6 +18,7 @@ const pages = [
             >
                 {{ page.title }}
             </NuxtLink>
+            <p>Ici ça test</p>
         </nav>
     </header>
 </template>
@@ -29,7 +30,7 @@ header {
     align-items: center;
     margin: 0 2rem;
     padding: 1rem;
-    border-bottom: 1px solid #f0f0f0;
+    border-top: 1px solid #f0f0f0;
 
     h1 {
         font-size: 1.5rem;
