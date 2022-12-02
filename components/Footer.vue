@@ -18,8 +18,8 @@ const pages = [
             >
                 {{ page.title }}
             </NuxtLink>
-           <img src="">
         </nav>
+        <a href="https://www.nuitdelinfo.com/"><img src="~/public/n2I.png" href="" id="logo_n2i"></a>
     </header>
 </template>
 
@@ -57,5 +57,9 @@ header {
             }
         }
     }
+}
+
+#logo_n2i{
+    width: 50px;
 }
 </style>

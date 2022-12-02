@@ -8,7 +8,7 @@ const pages = [
 
 <template>
     <header>
-        <h1>En-tête (à tête)</h1>
+        <h1><a href="/">En-tête (à tête)</a></h1>
 
         <nav>
             <NuxtLink
@@ -55,6 +55,11 @@ header {
                 color: #1e1e1e;
             }
         }
+    }
+
+    a{
+        text-decoration: none;
+        color: #f0f0f0;
     }
 }
 </style>
