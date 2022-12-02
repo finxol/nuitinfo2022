@@ -49,14 +49,21 @@ onMounted(() => {
 </template>
 
 <style lang="scss">
+@import "~/assets/fonts/recoleta/recoleta.css";
+@import "~/assets/fonts/abril-fatface/abrilfatface.css";
+
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Source Sans Pro', sans-serif;
     font-size: 16px;
     line-height: 1.5;
     color: #f0f0f0;
     background-color: #1e1e1e;
+    font-family: "recoleta-regular", sans-serif;
+
+    h1, h2 {
+        font-family: "AbrilFatface", sans-serif;
+    }
 
     div#app {
         min-height: 100vh;

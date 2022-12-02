@@ -26,9 +26,9 @@ const randomNumber = () => {
     return Math.ceil(Math.random() * 852) % captcha.length
 }
 
-let selected = reactive({text:captcha[randomNumber()]})
+let selected = reactive({text: captcha[randomNumber()]})
 
-let birthday = 0
+let birthday = ""
 let failed = reactive({show: false});
 
 const submit = () => {
@@ -60,13 +60,17 @@ const submit = () => {
 
                 <span v-if="selected.text.name !== 'Pornhub' ">Entrez l'année de naissance de ce président du Liechtenstein: </span>
                 <span v-else>Quel est l'année de création de </span>
-                {{ selected.text.name }} <br>
+                <b>{{ selected.text.name }}</b> <br>
                 <input
                     v-model="birthday"
                     type="number"
                     name="birthday"
+                    :placeholder="(new Date()).getFullYear()"
                 >
-                <input type="submit" value="Valider">
+                <input
+                    type="submit"
+                    value="Valider"
+                >
             </form>
         </div>
     </div>
@@ -91,14 +95,47 @@ const submit = () => {
         width: 500px;
         margin-top: 10%;
         padding: 60px 0;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
         border-radius: 20px;
 
         form {
-            input[type="submit"] {
+            input {
+                padding: .5rem 1rem;
+                background-color: #dadada;
+                border: 1px solid #e8e8e8;
+                border-radius: .5rem;
 
+                &[type="number"] {
+                    margin: 1rem .5rem 0 0;
+
+                    appearance: textfield;
+                    -moz-appearance:textfield;
+
+                    &::-webkit-outer-spin-button,
+                    &::-webkit-inner-spin-button {
+                        -webkit-appearance: none;
+                        margin: 0;
+                        display: none;
+                    }
+                }
+
+                &[type="submit"] {
+                    cursor: pointer;
+                    background-color: #1e90ff;
+                    color: white;
+                    font-weight: bold;
+
+                    &:hover {
+                        background-color: #1e90ff;
+                        color: white;
+                    }
+                }
             }
+
         }
     }
 }
-
 </style>

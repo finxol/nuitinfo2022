@@ -1,0 +1,17 @@
+* {
+    &::selection {
+        background-color: rgba(59, 59, 59, 0.5);
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    a {
+        color: inherit;
+        text-decoration: underline;
+    }
+}
+

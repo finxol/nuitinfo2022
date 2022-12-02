@@ -222,6 +222,10 @@ div.container {
                 }
             }
         }
+
+        a#link {
+            transform: rotate(90deg);
+        }
     }
 
     section {

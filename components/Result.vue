@@ -35,10 +35,14 @@ defineProps({
     text-align: center;
     color: #1e1e1e;
     background-color: white;
-    height: 50px;
-    width: 500px;
+    height: 8rem;
+    width: 30rem;
     margin-top: 10%;
     padding: 60px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     border-radius: 20px;
 }
 

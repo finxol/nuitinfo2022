@@ -164,7 +164,9 @@ const checkAnswers = () => {
     correctionShow.show = true;
 }
 
-
+let elapsed = reactive({
+    done: false,
+});
 </script>
 
 <template>
@@ -172,11 +174,17 @@ const checkAnswers = () => {
         class="quiz"
     >
         <h1>Quiz</h1>
-        <p>
-            Ce questionnaire à choix multiples un QCM. Chaque bonne réponse vous rapportes un point (normalement si ça
-            bug pas). D'une longueur de 10 questions, ce QCM va vous permettre d'en apprendre énormément sur le VIH et
-            sur les IST en général.
-        </p>
+
+        <section>
+            <p>
+                Ce questionnaire à choix multiples un QCM. Chaque bonne réponse vous rapportes un point (normalement si ça
+                bug pas). D'une longueur de 10 questions, ce QCM va vous permettre d'en apprendre énormément sur le VIH et
+                sur les IST en général.
+            </p>
+            <LazyTimer
+                @elapsed="elapsed.done = true"
+            />
+        </section>
 
         <form
             @submit.prevent="submit"
@@ -226,7 +234,7 @@ const checkAnswers = () => {
                 class="center-children"
             >
 
-                <input v-if="!correctionShow.show" type="submit" value="Valider">
+                <input v-if="!elapsed.done && !correctionShow.show" type="submit" value="Valider">
                 <button
                     v-else
                     @click.prevent="refresh"
@@ -259,9 +267,16 @@ const checkAnswers = () => {
 div.quiz {
     margin: 0 2rem 2rem;
 
-    p {
-        width: clamp(30rem, 50%, 70rem);
+    section {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        p {
+            width: clamp(30rem, 50%, 70rem);
+        }
     }
+
 
     form {
         ol {
