@@ -22,7 +22,7 @@
             <!-- right image -->
             <div class="col-2">
                 <div class="avatar">
-                    <img class="avatar__image" src="~/public/ruban.webp" alt="Ruban">
+                    <img class="avatar__image" src="~/public/ruban.webp" alt="Ruban" title="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
                 </div>
             </div>
         </div>
