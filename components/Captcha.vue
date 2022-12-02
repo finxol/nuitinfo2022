@@ -55,10 +55,11 @@ const submit = () => {
             <form
                 @submit.prevent="submit"
             >
-                Captcha de qualité <br>
+                <small>Captcha de qualité (car on aime l'osint)</small><br>
+
                 <h3 v-if="failed.show">Raté! essaye encore :)</h3>
 
-                <span v-if="selected.text.name !== 'Pornhub' ">Entrez l'année de naissance de ce président du Liechtenstein: </span>
+                <span v-if="selected.text.name !== 'Pornhub' ">Entrez l'année de naissance de ce chef d'État du Liechtenstein: </span>
                 <span v-else>Quel est l'année de création de </span>
                 <b>{{ selected.text.name }}</b> <br>
                 <input
@@ -91,7 +92,7 @@ const submit = () => {
         text-align: center;
         color: #1e1e1e;
         background-color: white;
-        height: 100px;
+        height: 15rem;
         width: 500px;
         margin-top: 10%;
         padding: 60px 0;

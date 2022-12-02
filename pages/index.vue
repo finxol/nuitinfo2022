@@ -22,7 +22,7 @@
             <!-- right image -->
             <div class="col-2">
                 <div class="avatar">
-                    <img class="avatar__image" src="~/public/ruban.webp" alt="Ruban" title="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" > <img class="avatar__image" src="~/public/ruban.webp" alt="Ruban" title="https://www.youtube.com/watch?v=dQw4w9WgXcQ"></a>
                 </div>
             </div>
         </div>
@@ -107,16 +107,25 @@
 
                 </div>
             </div>
+        </section>
+        </div>
+
 
             <div class="separator">
                 <!-- Separator line -->
                 <div class="separator_language"></div>
             </div>
 
+    <div class="missions"><section>
             <div class="row_missions">
                 <div class="col-2">
                     <h3>Les Données en France </h3>
-                    <p>- 6 155 personnes ont découvert leur séropositivité en 2018. <br><br>- 52% des personnes ayant découvert leur séropositivité VIH en 2018 n’avaient jamais fait de test de dépistage auparavant. <br><br>- Les femmes représentaient 35% des découvertes de séropositivité VIH en 2018.<br><br>- Par mode de contamination, les personnes ayant découvert leur séropositivité en 2018 ont été contaminées par rapports hétérosexuels (56%), rapports sexuels entre hommes (40%), usage de drogues injectables (2%).</p>
+                    <p>- 6 155 personnes ont découvert leur séropositivité en 2018. <br><br>- 52% des personnes ayant
+                        découvert leur séropositivité VIH en 2018 n’avaient jamais fait de test de dépistage auparavant.
+                        <br><br>- Les femmes représentaient 35% des découvertes de séropositivité VIH en 2018.<br><br>-
+                        Par mode de contamination, les personnes ayant découvert leur séropositivité en 2018 ont été
+                        contaminées par rapports hétérosexuels (56%), rapports sexuels entre hommes (40%), usage de
+                        drogues injectables (2%).</p>
 
                 </div>
             </div>
@@ -184,13 +193,13 @@
     margin-left: 250px;
 }
 
-.separator_language {
-    border-bottom: 2px solid #ff1212;
-    height: 1px;
-    width: 75%;
-    margin-left: 200px;
-    margin-right: 200px;
-    margin-top: 20px;
+.separator {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 25rem;
+    padding: 1rem;
+    border-bottom: 1px solid #f0f0f0;
 }
 
 
