@@ -136,6 +136,7 @@ const questions = reactive([
 ])
 
 let points = 0;
+
 const checkAnswers = () => {
     console.log('Verification en cours....');
     captchaShow.show = false;
@@ -144,9 +145,16 @@ const checkAnswers = () => {
             question.mistakeQ = true
         }
         question.answers.forEach(answer => {
-            if (answer.correct != answer.checked) {
-                question.mistakeQ = true
+            if (question.manyCorrect) {
+                if (answer.checked) {
+                    question.mistakeQ = false
+                }
+            } else {
+                if (answer.correct !== answer.checked) {
+                    question.mistakeQ = true
+                }
             }
+
         })
         if (!question.mistakeQ)
             points++
@@ -190,13 +198,11 @@ const checkAnswers = () => {
                     <div
                         v-for="answer in question.answers"
                         :key="index"
-                        @click="answer.checked = !answer.checked"
                     >
                         <label
                             :for="answer.text + question.title"
                         >
                             <input
-                                v-else
                                 type="checkbox"
                                 :id="answer.text + question.title"
                                 :disabled="correctionShow.show || answer.disabled"
@@ -285,7 +291,7 @@ div.quiz {
                 label {
                     margin: 0 0 0 2rem;
                     display: flex;
-                    justify-content: start;
+                    justify-content: flex-start;
                     align-items: center;
                     gap: .5rem;
 
@@ -302,7 +308,7 @@ div.quiz {
                         transform: translateY(-0.075em);
                         transition: .2s;
 
-                        &:checked {
+                        &[data-checked="true"] {
                             background-color: #ffffff;
                             border: 4px solid #650808;
                         }

@@ -8,7 +8,7 @@ const pages = [
 
 <template>
     <header>
-        <h1>Le pied</h1>
+        <h1>Le pied 🦶</h1>
 
         <nav>
             <NuxtLink
