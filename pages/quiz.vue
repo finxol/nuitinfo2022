@@ -106,7 +106,7 @@ const questions = reactive([
             {text: "Oui", correct: true, checked: false},
             {text: "Non si on se brosse les dents", correct: false, checked: false},
             {text: "Non si on mord", correct: false, checked: false},
-            {text: "D, la réponse D (j'espère que tu as la ref)", correct: false, checked: false},
+            {text: "D, la réponse D", correct: false, checked: false, ref: true},
         ],
         mistakeQ: false,
         manyCorrect: false
@@ -225,6 +225,17 @@ let elapsed = reactive({
                                 }"
                             >
                                 {{ answer.text }}
+                                <span
+                                    v-if="answer.ref"
+                                    id="siVousAvezLaRef"
+                                >
+                                    <a
+                                        href="https://youtu.be/WMdFnFjyR48"
+                                        target="_blank"
+                                        rel="noopener noreferer"
+                                    >( si vous avez la ref )</a>
+                                </span>
+
                             </span>
                         </label>
                     </div>
@@ -262,6 +273,10 @@ let elapsed = reactive({
 
 .green {
     color: green;
+}
+
+a {
+    all: unset;
 }
 
 div.quiz {

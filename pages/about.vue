@@ -41,6 +41,13 @@ onMounted(() => {
                 src="~/public/used_condom.webp"
                 alt="erreur"
             >
+            <a
+                id="link"
+                onclick="window.open('https://1drv.ms/p/s!AognzYfjcuoh02F6u0iNsEO-5pXI?e=JKoqv1',
+                         'newwindow',
+                         'width=300,height=250');
+              return false;"
+                href="https://1drv.ms/p/s!AognzYfjcuoh02F6u0iNsEO-5pXI?e=PiQdZ5">lien de présentation du site ( je crois) </a>
         </div>
 
         <section>
