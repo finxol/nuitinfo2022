@@ -18,7 +18,7 @@ const pages = [
             >
                 {{ page.title }}
             </NuxtLink>
-            <p>Ici ça test</p>
+           <img src="">
         </nav>
     </header>
 </template>
