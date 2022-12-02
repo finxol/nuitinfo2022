@@ -40,8 +40,6 @@ const submit = () => {
         console.log("captcha raté")
         failed.show = true
         selected.text = captcha[randomNumber()]
-        emit('validated')
-
     }
 }
 
