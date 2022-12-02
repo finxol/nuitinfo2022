@@ -92,7 +92,7 @@ const questions = reactive([
     {
         title: "Le VIH peut il être soigné ?",
         answers: [
-            {text: "Si on demande gentillement", correct: false, checked: false},
+            {text: "Si on demande gentiment", correct: false, checked: false},
             {text: "Non, mais on peut vivre avec", correct: true, checked: false},
             {text: "Oui", correct: false, checked: false},
             {text: "Oui si vous trouvez un traitement", correct: false, checked: false},
@@ -140,6 +140,9 @@ const checkAnswers = () => {
     console.log('Verification en cours....');
     captchaShow.show = false;
     questions.forEach(question => {
+        if (question.manyCorrect) {
+            question.mistakeQ = true
+        }
         question.answers.forEach(answer => {
             if (answer.correct != answer.checked) {
                 question.mistakeQ = true
@@ -185,17 +188,19 @@ const checkAnswers = () => {
                     </span>
 
                     <div
-                        v-for="(answer, i) in question.answers"
+                        v-for="answer in question.answers"
                         :key="index"
                         @click="answer.checked = !answer.checked"
                     >
-                        <label :for="answer.text + question.title">
-                            <input v-if="correctionShow.show" type="checkbox" :id="answer.text + question.title" disabled="true">
+                        <label
+                            :for="answer.text + question.title"
+                        >
                             <input
                                 v-else
                                 type="checkbox"
                                 :id="answer.text + question.title"
-                                :disabled="answer.disabled"
+                                :disabled="correctionShow.show || answer.disabled"
+                                @change="answer.checked = !correctionShow.show ? !answer.checked : answer.checked"
                                 :data-checked="answer.checked"
                             >
 

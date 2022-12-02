@@ -11,7 +11,10 @@ defineProps({
 <template>
     <div class="modal-overlay" @click="$emit('close-modal')">
         <div class="modal" @click.stop>
-            Résultat du quiz : {{ points }} / 10
+            Résultat du quiz : {{ points }} / 10 <br>
+            <button @click="$emit('close-modal')" >
+                Correction
+            </button>
         </div>
     </div>
 </template>
@@ -46,5 +49,23 @@ defineProps({
 
 .close-img {
     width: 25px;
+}
+
+button {
+    margin: 1rem auto 0;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: #1e90ff;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .2s;
+
+    &:hover {
+        background-color: #1e90ff;
+        opacity: 0.8;
+    }
 }
 </style>
