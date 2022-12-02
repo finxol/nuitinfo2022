@@ -130,4 +130,68 @@
 
 <style scoped lang="scss">
 
+.row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-left: 50px;
+}
+
+.row_missions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.col-2 {
+    flex-basis: 50%;
+    min-width: 100px;
+}
+
+.col-2 img {
+    max-width: 100%;
+    padding: 50px 200px;
+}
+
+.container {
+    max-width: 1400px;
+    margin: auto;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.avatar__image {
+    width: 250px;
+}
+
+
+.missions {
+    padding-top: 9rem;
+    display: block;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-left: 50px;
+    margin-right: 250px;
+}
+
+.missions h1 {
+    font-size: 30px;
+    line-height: 32px;
+    margin: 25px 0;
+    margin-left: 250px;
+}
+
+.separator_language {
+    border-bottom: 2px solid #ff1212;
+    height: 1px;
+    width: 75%;
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-top: 20px;
+}
+
+
 </style>
