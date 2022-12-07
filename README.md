@@ -11,7 +11,7 @@ Le niveau de cet EASTER EGG est considéré selon nous comme Moyen - Difficile, 
 Pour le type de l'Easter Egg nous avons choisi un lien clicable. Le lien est bien caché dans une phrase mais une phrase permet de le trouver avec du bon sens.
 
 
-## Àdéquation et Intégration
+## Adéquation et Intégration
 
 Comme expliqué plus haut, l'Easter Egg se trouve dans une phrase dans l'onglet " Quiz", Question N°8, Si vous voulez ne pas vous faire spoil, ne lisez pas la ligne plus bas.
 L'Easter Egg se trouve avec la phrase " ( si vous avez la ref )" 
